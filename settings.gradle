@@ -1,0 +1,2 @@
+rootProject.name='Yonsei Univ. View'
+include ':app'
