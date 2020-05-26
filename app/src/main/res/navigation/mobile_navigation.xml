@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_arcamera">
+
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="com.ar.yonseiunivview.ui.menu.MenuFragment"
+        android:label="menu"
+        tools:layout="@layout/fragment_menu" />
+
+    <fragment
+        android:id="@+id/navigation_arcamera"
+        android:name="com.ar.yonseiunivview.ui.arcamera.ArcameraFragment"
+        android:label="arcamera"
+        tools:layout="@layout/fragment_arcamera" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.ar.yonseiunivview.ui.setting.SettingFragment"
+        android:label="setting"
+        tools:layout="@layout/fragment_setting" />
+</navigation>
