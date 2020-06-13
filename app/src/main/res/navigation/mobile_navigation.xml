@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_menu"
-        android:name="com.ar.yonseiunivview.ui.menu.MenuFragment"
+        android:name="com.ar.yonseiunivview.ui.menu.WeatherFragment"
         android:label="menu"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_weather" />
 
     <fragment
         android:id="@+id/navigation_arcamera"
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_setting"
-        android:name="com.ar.yonseiunivview.ui.setting.SettingFragment"
+        android:name="com.ar.yonseiunivview.ui.setting.NotificationFragment"
         android:label="setting"
-        tools:layout="@layout/fragment_setting" />
+        tools:layout="@layout/fragment_noti" />
 </navigation>

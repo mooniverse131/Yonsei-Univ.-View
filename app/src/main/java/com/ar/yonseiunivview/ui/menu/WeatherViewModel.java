@@ -5,11 +5,11 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 
-public class MenuViewModel extends ViewModel {
+public class WeatherViewModel extends ViewModel {
     private MutableLiveData<String> mText;
-    public MenuViewModel(){
+    public WeatherViewModel(){
         mText = new MutableLiveData<>();
-        mText.setValue("Menu Fragment");
+        mText.setValue("Weather Fragment");
     }
     public LiveData<String> getText(){return mText;}
 }

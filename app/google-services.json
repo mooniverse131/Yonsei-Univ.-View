@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "975585102107",
+    "firebase_url": "https://yonsei-univ-view.firebaseio.com",
+    "project_id": "yonsei-univ-view",
+    "storage_bucket": "yonsei-univ-view.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975585102107:android:ae4b7805cc7a8f4aecabbe",
+        "android_client_info": {
+          "package_name": "com.ar.yonseiunivview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975585102107-vks6hgiiqe5lnjf0542esttasiv1hf4q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmr23VJW7rkwEXgablTqgPLjD6ztBuecA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975585102107-vks6hgiiqe5lnjf0542esttasiv1hf4q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
