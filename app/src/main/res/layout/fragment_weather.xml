@@ -9,7 +9,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+<ImageView
+    android:id = "@+id/icon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    />
     <TextView
         android:id="@+id/weather"
         android:layout_width="match_parent"
@@ -23,6 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/btn_weather"

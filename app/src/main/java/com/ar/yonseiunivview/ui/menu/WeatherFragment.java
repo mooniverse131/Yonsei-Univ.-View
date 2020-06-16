@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,14 +33,19 @@ public class WeatherFragment extends Fragment {
     public static String BaseUrl = "http://api.openweathermap.org/";
     public static String AppId = "e70b2a211c8d5acc99c685bff4fab094";
     public static String lat = "37";
-    public static String lon = "129";
+    public static String lon = "128";
     private TextView weatherData;
+    private ImageView weatherIcon;
     private Button btn;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_weather, container, false);
-       weatherData = root.findViewById(R.id.weather);
+
+        weatherIcon = root.findViewById(R.id.icon);
+
+        weatherData = root.findViewById(R.id.weather);
         btn = root.findViewById(R.id.btn_weather);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,26 +70,17 @@ public class WeatherFragment extends Fragment {
                 if (response.code() == 200) {
                     WeatherResponse weatherResponse = response.body();
                     assert weatherResponse != null;
-
-                    String stringBuilder = "Country: " +
-                            weatherResponse.sys.country +
-                            "\n" +
-                            "Temperature: " +
-                            weatherResponse.main.temp +
-                            "\n" +
-                            "Temperature(Min): " +
-                            weatherResponse.main.temp_min +
-                            "\n" +
-                            "Temperature(Max): " +
-                            weatherResponse.main.temp_max +
-                            "\n" +
-                            "Humidity: " +
-                            weatherResponse.main.humidity +
-                            "\n" +
-                            "Pressure: " +
-                            weatherResponse.main.pressure;
-
+                    double temp = Math.round((weatherResponse.main.temp - 273.15) * 10) / 10.0;
+                    double temp_max = Math.round((weatherResponse.main.temp_max - 273.15) * 10) / 10.0;
+                    double temp_min = Math.round((weatherResponse.main.temp_min - 273.15) * 10) / 10.0;
+                    String stringBuilder = "지역: 원주시\n" +
+                            "현재 기온 : " + temp + "℃\n" +
+                            "최고/최저 기온 : " + temp_max + "℃\n/" + temp_min + "℃\n" +
+                            "날씨 : " + transferWeather(weatherResponse.weather.get(0).description) + "\n" +
+                            "습도 : " + weatherResponse.main.humidity + "%\n";
                     weatherData.setText(stringBuilder);
+
+//                  weatherIcon.setImageIcon(weatherResponse.weather.get(0).icon);
                 }
             }
 
@@ -94,4 +91,31 @@ public class WeatherFragment extends Fragment {
         });
     }
 
+
+    private String transferWeather(String weather){
+        weather = weather.toLowerCase();
+
+        if(weather.equals("haze")) {
+            return "안개";
+        }else if(weather.equals("fog")) {
+            return "안개";
+        }else if(weather.equals("clouds")) {
+            return "구름";
+        }else if(weather.equals("few clouds")) {
+            return "구름 조금";
+        }else if(weather.equals("scattered clouds")) {
+            return "구름 낌";
+        }else if(weather.equals("broken clouds")) {
+            return "구름 많음";
+        }else if(weather.equals("overcast clouds")) {
+            return "구름 많음";
+        }else if(weather.equals("clear sky") || weather.equals("clear")) {
+            return "맑음";
+        }else return weather;
+    }
 }
+
+
+
+
+

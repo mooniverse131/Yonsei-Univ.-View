@@ -11,6 +11,7 @@ public class WeatherResponse {
     public Sys sys;
     @SerializedName("weather")
     public ArrayList<Weather> weather = new ArrayList<Weather>();
+    // weatherResponse.weather.main
     @SerializedName("main")
     public Main main;
     @SerializedName("wind")
