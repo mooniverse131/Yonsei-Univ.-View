@@ -84,3 +84,4 @@ public class ArcameraFragment extends Fragment implements OnMapReadyCallback{
         googleMap.addMarker(new MarkerOptions().position(new LatLng(35.141233, 126.925594)));
     }
 }
+

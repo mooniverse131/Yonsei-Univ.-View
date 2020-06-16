@@ -26,6 +26,8 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -40,7 +42,7 @@ public class WeatherFragment extends Fragment {
     public static String lat = "37";
     public static String lon = "128";
     public static String iconUrl;
-    private TextView weatherData;
+    private TextView weatherData, course;
     private ImageView weatherIcon;
     private FloatingActionButton btn;
 
@@ -49,13 +51,16 @@ public class WeatherFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_weather, container, false);
 
+        course = root.findViewById(R.id.course);
         weatherIcon = root.findViewById(R.id.icon);
         weatherData = root.findViewById(R.id.weather);
         btn = root.findViewById(R.id.btn_weather);
+        getCurrentData();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getCurrentData();
+                recommendCourse();
             }
 
         });
@@ -142,9 +147,22 @@ public class WeatherFragment extends Fragment {
             return "맑음";
         }else return weather;
     }
+
+    public void recommendCourse(){
+        long now = System.currentTimeMillis();
+        Date mDate = new Date(now);
+        SimpleDateFormat simpleDate = new SimpleDateFormat("hh");
+        String getTime = simpleDate.format(mDate);
+        int hour = Integer.parseInt(getTime);
+
+        String recommendCourse = "Recommended Course\n";
+
+        if(hour > 7 && hour < 19){
+            recommendCourse = recommendCourse.concat("무지개 다리 -> 연지교 ->스포츠 센터 -> 대운동장 -> 연세플라자\n");
+        }else {
+            recommendCourse = recommendCourse.concat("팔각정 -> 무지개 다리 -> 연지교 -> 키스로드 -> 노천극장\n");
+        }
+        course.setText(recommendCourse);
+    }
 }
-
-
-
-
 
