@@ -79,9 +79,9 @@ public class ArcameraFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public void onMapReady(GoogleMap googleMap) {
         MapsInitializer.initialize(this.getActivity());
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(35.141233,126.925594), 14);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(37.282711,127.899904), 14);
         googleMap.animateCamera(cameraUpdate);
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(35.141233, 126.925594)));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(37.282711, 127.899904)));
     }
 }
 

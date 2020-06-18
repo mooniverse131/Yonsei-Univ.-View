@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/navigation_menu"
         android:name="com.ar.yonseiunivview.ui.menu.WeatherFragment"
-        android:label="menu"
+        android:label="날씨"
         tools:layout="@layout/fragment_weather" />
 
     <fragment
         android:id="@+id/navigation_arcamera"
         android:name="com.ar.yonseiunivview.ui.arcamera.ArcameraFragment"
-        android:label="arcamera"
+        android:label="지도"
         tools:layout="@layout/fragment_arcamera" />
 
     <fragment
         android:id="@+id/navigation_setting"
         android:name="com.ar.yonseiunivview.ui.setting.NotificationFragment"
-        android:label="setting"
+        android:label="공지사항"
         tools:layout="@layout/fragment_noti" />
 </navigation>

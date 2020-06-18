@@ -3,7 +3,7 @@
     <item
         android:id="@+id/navigation_menu"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="Menu" />
+        android:title="날씨" />
 
     <item
         android:id="@+id/navigation_arcamera"
@@ -13,5 +13,5 @@
     <item
         android:id="@+id/navigation_setting"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="setting" />
+        android:title="공지사항" />
 </menu>
